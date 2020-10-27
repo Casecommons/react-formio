@@ -73,16 +73,17 @@ function Pagination({
     <nav aria-label="Page navigation">
       <ul className="pagination">
         <li className={`page-item ${(activePage === 1) ? 'disabled' : ''}`}>
-          <button
+          <a
             className="page-link"
             onClick={() => {
               if (activePage !== 1) {
                 onSelect(activePage - 1);
               }
             }}
+            href="javascript:void(0)"
           >
             {prev}
-          </button>
+          </a>
         </li>
 
         {
@@ -101,28 +102,30 @@ function Pagination({
 
             return (
               <li className={`page-item ${className}`} key={page}>
-                <button
+                <a
                   className="page-link"
                   onClick={() => onSelect(page)}
+                  href="javascript:void(0)"
                 >
                   {page}
-                </button>
+                </a>
               </li>
             );
           })
         }
 
         <li className={`page-item ${(activePage === pages) ? 'disabled' : ''}`}>
-          <button
+          <a
             className="page-link"
             onClick={() => {
               if (activePage !== pages) {
                 onSelect(activePage + 1);
               }
             }}
+            href="javascript:void(0)"
           >
             {next}
-          </button>
+          </a>
         </li>
       </ul>
     </nav>
