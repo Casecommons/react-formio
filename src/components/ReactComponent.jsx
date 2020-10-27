@@ -148,7 +148,7 @@ export default class ReactComponent extends Field {
   checkValidity(data, dirty, rowData) {
     const valid = super.checkValidity(data, dirty, rowData);
     if (!valid) {
-      return false;
+      return !valid;
     }
     return this.validate(data, dirty, rowData);
   }
