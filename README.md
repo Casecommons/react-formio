@@ -15,6 +15,7 @@ npm-compatible packaging system such as [Browserify](http://browserify.org/) or
 
 ```
 npm install react-formio --save
+npm install formiojs --save // Install formiojs since it is a peerDependency
 ```
 
 ## Components
@@ -86,7 +87,7 @@ Please note that the FormBuilder component does not load and save from/to a url.
 | ```onSaveComponent``` | ```component```: object | Triggered when the component settings dialog is saved and closed |
 | ```onCancelComponent``` | ```component```: object | Triggered when the component settings dialog is cancelled |
 | ```onDeleteComponent``` | ```component```: object | Triggered when a component is removed from the form |
-| ```updateComponent``` | ```component```: object | Triggered when a component is added or moved in the form |
+| ```onUpdateComponent``` | ```component```: object | Triggered when a component is added or moved in the form |
 
 
 #### Example
