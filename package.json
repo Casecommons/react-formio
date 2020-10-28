@@ -31,11 +31,7 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.1.4",
     "eventemitter2": "^5.0.1",
-<<<<<<< HEAD
     "formiojs": "git+https://github.com/Casecommons/formio.js.git",
-=======
-    "formiojs": "https://github.com/Casecommons/formio.js.git",
->>>>>>> dd2ebd6c4d47f8da55e100289d4a1bacf15448f6
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "recompose": "^0.30.0"
