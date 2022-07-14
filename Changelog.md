@@ -49,27 +49,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - added Pagination component export
  - Added event when form is ready
 
-## 5.0.0-alpha.1
-### Changed
- - Refactored to work with latest React version.
-
-## 4.3.0
-### Changed
- - Upgrade formio.js to 4.9.0.
-
-## 4.2.6
-### Changed
- - Update dependencies for security updates.
-
-## 4.2.5
-### Fixed
- - Check validity return correct value.
-
-## 4.2.4
-### Fixed
- - Empty wizard change event.
- - Project access not setting correctly in auth state.
-
 ## 4.2.3
 ### Fixed
  - Change event on builder.

@@ -31,6 +31,7 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.21.1",
     "eventemitter2": "^6.4.5",
+    "formiojs": "git+https://github.com/Casecommons/formio.js.git",
     "lodash": "^4.17.21",
     "prop-types": "^15.8.1"
   },
@@ -57,7 +58,6 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-mocha": "^9.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "formiojs": "^4.14.6",
     "jsdom": "^19.0.0",
     "karma": "^6.3.18",
     "karma-chrome-launcher": "^3.1.1",
@@ -76,8 +76,7 @@
     "lib"
   ],
   "peerDependencies": {
-    "formiojs": "^4.12.4-rc.2",
     "react": "^15.3.0 || ^16.0.0 || ^17.0.0",
-    "react-dom": "^15.3.0 || ^16.0.0 || ^17.0.0"
+    "react-dom": "^15.3.0 || ^16.0.0"
   }
 }

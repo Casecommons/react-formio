@@ -45,7 +45,7 @@ You can respond to various events in the form. Simply pass in a prop with a func
 | ```onChange``` | ```submission```: object, ```submission.changed```: object of what changed, ```submission.isValid```: boolean - if the submission passes validations. | A value in the submission has changed. |
 | ```onError``` | ```errors```: array or string or boolean | Called when an error occurs during submission such as a validation issue. |
 | ```onRender``` | | Triggers when the form is finished rendering. |
-| ```onCustomEvent``` | { ```type```: string - event type, ```component```: object - triggering component, ```data```: object - data for component, ```event```: string - raw event } | Event that is triggered from a button configured with "Event" type. | 
+| ```onCustomEvent``` | { ```type```: string - event type, ```component```: object - triggering component, ```data```: object - data for component, ```event```: string - raw event } | Event that is triggered from a button configured with "Event" type. |
 | ```onPrevPage``` | { ```page```: integer - new page number, ```submission```: object - submission data } | Triggered for wizards when "Previous" button is pressed. |
  ```onNextPage``` | { ```page```: integer - new page number, ```submission```: object - submission data } | Triggered for wizards when "Next" button is pressed. |
   ```formReady``` | ```formInstance```: Webform/Wizard - form class instance | Called when the form gets ready state. |
@@ -119,7 +119,7 @@ The Errors component can be used to print out errors that can be generated withi
 None
 
 ### FormEdit
-The FormEdit component wraps the FormBuilder component and adds the title, display, name and path fields at the top along with a save button. 
+The FormEdit component wraps the FormBuilder component and adds the title, display, name and path fields at the top along with a save button.
 
 #### Props
 

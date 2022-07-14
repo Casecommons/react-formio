@@ -6,7 +6,17 @@ import _cloneDeep from 'lodash/cloneDeep';
 import _camelCase from 'lodash/camelCase';
 
 const reducer = (form, {type, value}) => {
-  const formCopy = _cloneDeep(form);
+  const formCopy = form
+  ? _cloneDeep(form)
+  : {
+    title: '',
+    name: '',
+    path: '',
+    display: 'form',
+    type: 'form',
+    components: [],
+  };
+
   switch (type) {
     case 'formChange':
       for (let prop in value) {
