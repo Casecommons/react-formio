@@ -14,9 +14,9 @@ const FormBuilder = (props) => {
   };
 
   const onChange = () => {
-    const {onChange} = props;
-    if (onChange && typeof onChange === 'function') {
-      onChange(builderRef.current.instance.form, builderRef.current.instance.schema);
+    const {onChange: onFormChange} = props;
+    if (onFormChange && typeof onFormChange === 'function') {
+      onFormChange(builderRef.current.instance.form, builderRef.current.instance.schema);
     }
   };
 
@@ -50,7 +50,7 @@ const FormBuilder = (props) => {
 
   useEffect(() => {
     initializeBuilder(props);
-    return () => (builderRef.current ? builderRef.current.instance.destroy(true) : null)
+    return () => (builderRef.current ? builderRef.current.instance.destroy(true) : null);
   }, [builderRef]);
 
   const elementDidMount = useCallback((el) => element = el);

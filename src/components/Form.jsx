@@ -3,7 +3,7 @@ import _isEqual from 'lodash/isEqual';
 import {Formio} from 'formiojs';
 const FormioForm = Formio.Form;
 
- const Form = (props) => {
+ const Form = React.forwardRef((props, ref) => {
   let instance;
   let createPromise;
   let element;
@@ -20,7 +20,7 @@ const FormioForm = Formio.Form;
         formReady(formioInstance);
       }
     });
-  }
+  };
 
   const onAnyEvent = (event, ...args) => {
      if (event.startsWith('formio.')) {
@@ -30,7 +30,7 @@ const FormioForm = Formio.Form;
         props[funcName](...args);
       }
     }
-  }
+  };
 
   const initializeFormio = () => {
     const {submission} = props;
@@ -82,7 +82,9 @@ const FormioForm = Formio.Form;
     }
   }, [props.submission, formio]);
 
-  return <div ref={el => element = el} />;
-};
+  return <div ref={el => {
+ element = el; ref.current = el;
+}} />;
+});
 
 export default Form;
