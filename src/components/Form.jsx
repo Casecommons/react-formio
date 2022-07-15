@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import PropTypes from 'prop-types';
+import EventEmitter from 'eventemitter2';
 import _isEqual from 'lodash/isEqual';
 import {Formio} from 'formiojs';
 const FormioForm = Formio.Form;
@@ -20,6 +22,8 @@ const FormioForm = Formio.Form;
         formReady(formioInstance);
       }
     });
+
+    return createPromise;
   };
 
   const onAnyEvent = (event, ...args) => {
@@ -40,12 +44,8 @@ const FormioForm = Formio.Form;
         if (formio && submission) {
           formio.submission = submission;
         }
-
-        return this.formio;
       });
     }
-
-    this.initializeFormio();
   };
 
   useEffect(() => {
@@ -72,8 +72,16 @@ const FormioForm = Formio.Form;
         return formio;
       }
       });
+      initializeFormio();
     }
-  }, [props.form, props.url]);
+  }, [props.form]);
+
+  useEffect(() => {
+    const {options = {}} = props;
+    if (!options.events) {
+      options.events = Form.getDefaultEmitter();
+    }
+  }, [props.options]);
 
   useEffect(() => {
     const {submission} = props;
@@ -83,8 +91,47 @@ const FormioForm = Formio.Form;
   }, [props.submission, formio]);
 
   return <div ref={el => {
- element = el; ref.current = el;
-}} />;
+    element = el; ref.current = el;
+   }} />;
 });
+
+Form.propTypes = {
+  src: PropTypes.string,
+  url: PropTypes.string,
+  form: PropTypes.object,
+  submission: PropTypes.object,
+  options: PropTypes.shape({
+    readOnly: PropTypes.bool,
+    noAlerts: PropTypes.bool,
+    i18n: PropTypes.object,
+    template: PropTypes.string,
+    saveDraft: PropTypes.bool,
+  }),
+  onPrevPage: PropTypes.func,
+  onNextPage: PropTypes.func,
+  onCancel: PropTypes.func,
+  onChange: PropTypes.func,
+  onCustomEvent: PropTypes.func,
+  onComponentChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  onSubmitDone: PropTypes.func,
+  onFormLoad: PropTypes.func,
+  onError: PropTypes.func,
+  onRender: PropTypes.func,
+  onAttach: PropTypes.func,
+  onBuild: PropTypes.func,
+  onFocus: PropTypes.func,
+  onBlur: PropTypes.func,
+  onInitialized: PropTypes.func,
+  formReady: PropTypes.func,
+  formioform: PropTypes.any
+};
+
+Form.getDefaultEmitter = () => {
+  return new EventEmitter({
+    wildcard: false,
+    maxListeners: 0
+  });
+};
 
 export default Form;
