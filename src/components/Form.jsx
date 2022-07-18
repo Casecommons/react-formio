@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useImperativeHandle} from 'react';
 import PropTypes from 'prop-types';
 import EventEmitter from 'eventemitter2';
 import _isEqual from 'lodash/isEqual';
@@ -90,9 +90,11 @@ const FormioForm = Formio.Form;
     }
   }, [props.submission, formio]);
 
-  return <div ref={el => {
-    element = el; ref.current = el;
-   }} />;
+  useImperativeHandle(ref, () => ({
+    formio: formio,
+  }));
+
+  return <div ref={el => element = el} />;
 });
 
 Form.propTypes = {
