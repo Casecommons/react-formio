@@ -91,7 +91,8 @@ const FormioForm = Formio.Form;
   }, [props.submission, formio]);
 
   useImperativeHandle(ref, () => ({
-    formio: formio,
+    formio,
+    element,
   }));
 
   return <div ref={el => element = el} />;
