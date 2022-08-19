@@ -1,4 +1,4 @@
-import {Formio} from 'formiojs';
+import {Formio} from 'formiojs/lib';
 const Webform = Formio.Webform;
 const WebformBuilder = Formio.WebformBuilder;
 const Wizard = Formio.Wizard;
