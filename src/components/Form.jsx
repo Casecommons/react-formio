@@ -42,7 +42,7 @@ const FormioForm = Formio.Form;
       instance.onAny(onAnyEvent);
       createPromise.then(() => {
         if (formio && submission) {
-          formio.submission = submission;
+          formio.submission = {...submission};
         }
       });
     }
@@ -86,7 +86,7 @@ const FormioForm = Formio.Form;
   useEffect(() => {
     const {submission} = props;
     if (formio && submission && !_isEqual(formio.submission.data, submission.data)) {
-      formio.submission = submission;
+      formio.submission =  {...submission};
     }
   }, [props.submission, formio]);
 
