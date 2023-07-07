@@ -74,7 +74,7 @@ const FormioForm = Formio.Form;
       });
       initializeFormio();
     }
-  }, [props.form]);
+  }, [props.form, props.url]);
 
   useEffect(() => {
     const {options = {}} = props;
