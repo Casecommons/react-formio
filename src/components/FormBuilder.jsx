@@ -5,6 +5,7 @@ import {FormBuilder as FormioFormBuilder} from 'formiojs';
 const FormBuilder = (props) => {
   const builderRef = useRef();
   let element;
+  const [pdfSrc, setPdfSrc] = useState(undefined);
 
   const emit = (funcName) => (...args) => {
     // eslint-disable-next-line no-prototype-builtins
@@ -34,11 +35,21 @@ const FormBuilder = (props) => {
     {name: 'pdfUploaded', action: onChange},
   ];
 
+  const getPdfSrc = (providedForm) => {
+    return providedForm && providedForm.display === 'pdf' && providedForm.settings && providedForm.settings.pdf ? providedForm.settings.pdf.src : undefined
+  }
+
   const initializeBuilder = (builderProps) => {
     let {options, form} = builderProps;
     const {Builder} = builderProps;
     options = Object.assign({}, options);
     form = Object.assign({}, form);
+
+    setPdfSrc(getPdfSrc(form));
+
+    if (builderRef.current && builderRef.current.instance) {
+      builderRef.current.instance.destroy(true);
+    }
 
     builderRef.current = new Builder(element, form, options);
 
@@ -65,7 +76,8 @@ const FormBuilder = (props) => {
     if (builderRef.current && props.form && props.form.components) {
       builderRef.current.setForm(props.form);
     }
-    if (!builderRef.current && props.form) {
+    const providedPdfSrc = getPdfSrc(props.form)
+    if (props.form && (!builderRef.current || providedPdfSrc !== pdfSrc)) {
       initializeBuilder(props);
     }
   }, [props.form]);
