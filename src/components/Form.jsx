@@ -21,6 +21,8 @@ const FormioForm = Formio.Form;
       if (formReady) {
         formReady(formioInstance);
       }
+
+      return formioInstance;
     });
 
     return createPromise;
@@ -36,43 +38,42 @@ const FormioForm = Formio.Form;
     }
   };
 
-  const initializeFormio = () => {
+  const initializeFormio = (formIoInstance) => {
     const {submission} = props;
-    if (createPromise) {
+    if (formIoInstance) {
       instance.onAny(onAnyEvent);
-      createPromise.then(() => {
-        if (formio && submission) {
-          formio.submission = {...submission};
-        }
-      });
+      
+      if (formIoInstance && submission) {
+        formIoInstance.submission = {...submission};
+      }
     }
   };
 
   useEffect(() => {
     const {src} = props;
     if (src) {
-      createWebformInstance(src).then(() => {
-        if (formio) {
-          formio.src = src;
+      createWebformInstance(src).then((formIoInstance) => {
+        if (formIoInstance) {
+          formIoInstance.src = src;
+          initializeFormio(formIoInstance);
         }
       });
-      initializeFormio();
     }
   }, [props.src]);
 
   useEffect(() => {
     const {form, url} = props;
     if (form) {
-      createWebformInstance(form).then(() => {
-      if (formio) {
-        formio.form = form;
+      createWebformInstance(form).then((formIoInstance) => {
+      if (formIoInstance) {
+        formIoInstance.form = form;
         if (url) {
-          formio.url = url;
+          formIoInstance.url = url;
         }
-        return formio;
+        initializeFormio(formIoInstance);
+        return formIoInstance;
       }
       });
-      initializeFormio();
     }
   }, [props.form, props.url]);
 
