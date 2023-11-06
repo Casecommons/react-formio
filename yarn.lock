@@ -3395,7 +3395,7 @@ form-data@^4.0.0:
 
 "formiojs@git+https://github.com/Casecommons/formio.js.git#upgrade":
   version "4.15.0-rc.13"
-  resolved "git+https://github.com/Casecommons/formio.js.git#055349a8a455653bcadd1c2b8d8dc719b58bd130"
+  resolved "git+https://github.com/Casecommons/formio.js.git#fc0bf197783a86d2313aacce48925479fb295dda"
   dependencies:
     "@formio/bootstrap3" "^2.12.2"
     "@formio/choices.js" "^9.0.1"
