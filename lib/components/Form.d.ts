@@ -82,6 +82,6 @@ export type FormProps = {
         [event: string]: (...args: any[]) => void;
     };
 };
-export declare const Form: (props: FormProps) => import("react/jsx-runtime").JSX.Element;
+export declare const Form: import("react").ForwardRefExoticComponent<FormProps & import("react").RefAttributes<unknown>>;
 export {};
 //# sourceMappingURL=Form.d.ts.map
