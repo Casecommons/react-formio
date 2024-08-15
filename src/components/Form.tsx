@@ -1,4 +1,11 @@
-import { CSSProperties, forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import {
+	CSSProperties,
+	forwardRef,
+	useEffect,
+	useImperativeHandle,
+	useRef,
+	useState,
+} from 'react';
 import { EventEmitter, Form as FormClass, Webform } from '@formio/js';
 import { Component, Form as CoreFormType } from '@formio/core';
 import structuredClone from '@ungap/structured-clone';
@@ -358,9 +365,9 @@ export const Form = forwardRef((props: FormProps, ref) => {
 	}, [instanceIsReady, submission]);
 
 	useImperativeHandle(ref, () => ({
-    formio: formInstance.current,
-    element: renderElement.current,
-  }));
+		formio: formInstance.current,
+		element: renderElement.current,
+	}));
 
 	return <div className={className} style={style} ref={renderElement} />;
 });

@@ -1,4 +1,3 @@
-/// <reference types="react" />
 type BaseConfigurationArgs = {
     baseUrl?: string;
     projectUrl?: string;

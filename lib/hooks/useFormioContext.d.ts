@@ -1,4 +1,3 @@
-/// <reference types="react" />
 export declare function useFormioContext(): {
     Formio: any;
     baseUrl: any;

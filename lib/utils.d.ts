@@ -1,7 +1,7 @@
 /**
  * @param {import('./types').Column[]} columns
  */
-export function setColumnsWidth(columns: import('./types').Column[]): void;
+export function setColumnsWidth(columns: import("./types").Column[]): void;
 export function getComponentDefaultColumn(component: any): {
     component: any;
     key: string;
