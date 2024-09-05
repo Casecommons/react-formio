@@ -2,7 +2,7 @@ import React, {useEffect, useState, useImperativeHandle} from 'react';
 import PropTypes from 'prop-types';
 import EventEmitter from 'eventemitter2';
 import _isEqual from 'lodash/isEqual';
-import {Formio} from 'formiojs/lib';
+import {Formio} from '@formio/js/lib';
 const FormioForm = Formio.Form;
 
  const Form = React.forwardRef((props, ref) => {
@@ -42,7 +42,7 @@ const FormioForm = Formio.Form;
     const {submission} = props;
     if (formIoInstance) {
       instance.onAny(onAnyEvent);
-      
+
       if (formIoInstance && submission) {
         formIoInstance.submission = {...submission};
       }

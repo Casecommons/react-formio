@@ -1,4 +1,4 @@
-import {Formio} from 'formiojs/lib';
+import {Formio} from '@formio/js/lib';
 const Field = Formio.Components.components.field;
 
 export default class ReactComponent extends Field {
