@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 5.2.0
 ### Changed
- - Update to work with latest React and also fixed imports from formiojs for build size.
+ - Update to work with latest React and also fixed imports from @formio/js for build size.
 
 ## 5.1.1
 ### Fixed
@@ -30,12 +30,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 5.1.0-rc.1
 ### Fixed
  - Change the way formio being stored
- - FIO-2660: Fixes an issue where FormBuilder reacreats a formiojs instance on each update
+ - FIO-2660: Fixes an issue where FormBuilder reacreats a @formio/js instance on each update
 
 ## 5.0.0
 ### Fixed
  - An issue with FormsGrid.
- 
+
 ## 5.0.0-rc.3
 ### Changed
  - Changed name to @formio/react.
@@ -56,7 +56,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 4.2.2
 ### Added
  - PDF Uploaded event watcher
- 
+
 ### Fixed
  - Form reset when props change
  - onChange and onDelet not being called in builder.
@@ -66,7 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
  - getForm not calculating url correctly.
 
 ## 4.2.0
-### Changed 
+### Changed
  - Upgrade formio.js to 4.2 branch.
  - Make event management generic so it can pass through all events.
 
@@ -83,7 +83,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Changed
  - Allow override of FormEdit
  - Auth actions and reducers to make requests more efficient.
- 
+
 ### Added
  - selectIsActive selector.
 
@@ -94,10 +94,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 3.1.6
 ### Removed
  - Title from FormEdit
- 
+
 ### Fixed
  - saveForm action was not saving.
- 
+
 ### Added
  - Errors component
  - selectError selector
@@ -109,7 +109,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 3.1.4
 ### Added
  - Pagination to SubmissionGrid and FormGrid
- 
+
 ### Changed
  - Specify query for submissions and forms reducers and remove tag.
 
@@ -147,9 +147,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Rerelease
 
 ## 3.0.5
-### Changed 
+### Changed
  - Update Formio verison
- 
+
 ### Fixed
  - Event emitter cross polinating between forms.
  - Proptypes of formprovider
