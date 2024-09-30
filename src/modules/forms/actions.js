@@ -1,4 +1,4 @@
-import {Formio as Formiojs} from '@formio/js/lib';
+import {Formio as Formiojs} from 'formiojs/lib';
 
 import {selectRoot} from '../root';
 

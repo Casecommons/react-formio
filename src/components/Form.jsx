@@ -2,7 +2,7 @@ import React, {useEffect, useState, useImperativeHandle} from 'react';
 import PropTypes from 'prop-types';
 import EventEmitter from 'eventemitter2';
 import _isEqual from 'lodash/isEqual';
-import {Formio} from '@formio/js/lib';
+import {Formio} from 'formiojs/lib';
 const FormioForm = Formio.Form;
 
  const Form = React.forwardRef((props, ref) => {

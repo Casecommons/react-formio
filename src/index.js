@@ -1,4 +1,4 @@
-import {Formio} from '@formio/js/lib';
+import {Formio} from 'formiojs/lib';
 const Webform = Formio.Webform;
 const WebformBuilder = Formio.WebformBuilder;
 const Wizard = Formio.Wizard;
@@ -16,4 +16,4 @@ export * from './constants';
 export * from './modules';
 export * from './types';
 export * from './utils';
-export {Components, Formio, Utils, Templates} from '@formio/js/lib';
+export {Components, Formio, Utils, Templates} from 'formiojs/lib';
